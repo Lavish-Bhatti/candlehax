@@ -471,6 +471,25 @@
   }
 </style>
 </head>
+  <script>
+function copyToClipboard(text, button) {
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            const originalText = button.innerText;
+            button.innerText = "Copied!";
+            button.disabled = true;
+
+            setTimeout(() => {
+                button.innerText = originalText;
+                button.disabled = false;
+            }, 1500);
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Failed to copy.");
+        });
+}
+</script>
 <body>
 
 <div class="wrap">
@@ -582,7 +601,10 @@
         <div class="code-chip">
           <span class="code-label">Code</span>
           <span class="code-value">Candlehax4u</span>
-          <button class="copy-btn" type="button" onclick="copyCode(this, 'Candlehax4u')">Copy</button>
+          <button class="copy-btn" type="button"
+onclick="copyToClipboard('Candlehax4u', this)">
+    Copy
+</button>
         </div>
       </div>
     </div>
@@ -609,7 +631,10 @@
         <div class="code-chip">
           <span class="code-label">Code</span>
           <span class="code-value">zu4b8j75ah</span>
-          <button class="copy-btn" type="button" onclick="copyCode(this, 'zu4b8j75ah')">Copy</button>
+          <button class="copy-btn" type="button"
+onclick="copyToClipboard('zu4b8j75ah', this)">
+    Copy
+</button>
         </div>
       </div>
     </div>
