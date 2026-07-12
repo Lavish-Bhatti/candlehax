@@ -127,26 +127,24 @@ export function requireLogin() {
 // Admin Check
 // ==========================================
 
-export function requireAdmin(adminEmail) {
+const ADMIN_EMAILS = [
+  "bhattilavish1@gmail.com",
+  "an4085612@gmail.com"
+];
 
-    onAuthStateChanged(auth, (user) => {
+export function requireAdmin() {
+  onAuthStateChanged(auth, (user) => {
 
-        if (!user) {
+    if (!user) {
+      window.location.href = "index.html";
+      return;
+    }
 
-            window.location.href = "index.html";
+    if (!ADMIN_EMAILS.includes(user.email)) {
+      alert("Access Denied");
+      signOut(auth);
+      window.location.href = "index.html";
+    }
 
-            return;
-
-        }
-
-        if (user.email !== adminEmail) {
-
-            alert("Access Denied");
-
-            signOut(auth);
-
-        }
-
-    });
-
+  });
 }
