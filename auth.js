@@ -133,18 +133,20 @@ const ADMIN_EMAILS = [
 ];
 
 export function requireAdmin() {
-  onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
 
-    if (!user) {
-      window.location.href = "index.html";
-      return;
-    }
+        if (user === null) {
+            console.log("No logged in user.");
+            return; // redirect mat karo
+        }
 
-    if (!ADMIN_EMAILS.includes(user.email)) {
-      alert("Access Denied");
-      signOut(auth);
-      window.location.href = "index.html";
-    }
+        console.log("Logged in:", user.email);
 
-  });
+        if (!ADMIN_EMAILS.includes(user.email)) {
+            alert("Access Denied");
+            await signOut(auth);
+            window.location.href = "index.html";
+        }
+
+    });
 }
