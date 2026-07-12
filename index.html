@@ -25,9 +25,7 @@
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-
   html{scroll-behavior:smooth;}
-
   body{
     background:var(--bg);
     color:var(--text);
@@ -35,21 +33,11 @@
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-
   a{color:inherit; text-decoration:none;}
-
   ::selection{background:var(--accent); color:#0B0E14;}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 
-  :focus-visible{
-    outline:2px solid var(--accent);
-    outline-offset:3px;
-  }
-
-  .wrap{
-    max-width:820px;
-    margin:0 auto;
-    padding:0 24px;
-  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
 
   /* ---------- LOGIN OVERLAY ---------- */
   #loginOverlay{
@@ -64,9 +52,8 @@
     -webkit-backdrop-filter:blur(10px);
     padding:24px;
   }
-
   .login-card{
-    width:min(430px, 100%);
+    width:min(430px,100%);
     background:linear-gradient(180deg, rgba(18,22,31,0.98), rgba(13,17,24,0.98));
     border:1px solid rgba(212,168,83,0.22);
     border-radius:20px;
@@ -75,7 +62,6 @@
     text-align:center;
     position:relative;
   }
-
   .login-logo{
     width:96px;
     height:96px;
@@ -86,7 +72,6 @@
     box-shadow:0 0 0 1px rgba(212,168,83,0.18), 0 0 40px -8px rgba(212,168,83,0.38);
     background:#0B0E14;
   }
-
   .login-card h2{
     font-family:var(--font-display);
     font-size:30px;
@@ -94,22 +79,21 @@
     margin-bottom:10px;
     letter-spacing:-0.02em;
   }
-
   .login-card p{
     color:var(--text-dim);
     font-size:14px;
     margin-bottom:22px;
   }
-
   .login-card .btn{
+    display:inline-flex;
     width:100%;
     justify-content:center;
+    align-items:center;
     margin-top:8px;
     border-radius:10px;
     padding:13px 18px;
     font-size:15px;
   }
-
   .user-meta{
     display:flex;
     flex-direction:column;
@@ -118,426 +102,99 @@
     color:var(--text-faint);
     font-size:12px;
   }
-
-  .user-meta span:first-child{
-    color:var(--text-dim);
-  }
+  .user-meta span:first-child{color:var(--text-dim);}
 
   /* ---------- HERO ---------- */
-  .hero{
-    padding:88px 0 40px;
-    text-align:center;
-  }
-
+  .hero{padding:88px 0 40px;text-align:center;}
   .avatar{
-    width:88px;
-    height:88px;
-    border-radius:50%;
-    margin:0 auto 24px;
-    object-fit:cover;
-    display:block;
+    width:88px;height:88px;border-radius:50%;margin:0 auto 24px;object-fit:cover;display:block;
     box-shadow:0 0 0 1px var(--line), 0 0 40px -8px rgba(212,168,83,0.35);
   }
-
   .eyebrow{
-    font-family:var(--font-mono);
-    font-size:11px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:14px;
+    font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:14px;
   }
-
   h1{
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:clamp(28px, 5vw, 40px);
-    letter-spacing:-0.01em;
-    margin-bottom:14px;
+    font-family:var(--font-display);font-weight:600;font-size:clamp(28px, 5vw, 40px);
+    letter-spacing:-0.01em;margin-bottom:14px;
   }
-
-  .tagline{
-    color:var(--text-dim);
-    font-size:16px;
-    max-width:440px;
-    margin:0 auto;
-  }
+  .tagline{color:var(--text-dim);font-size:16px;max-width:440px;margin:0 auto;}
 
   /* ---------- SIGNATURE TICKER ---------- */
-  .ticker{
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    overflow:hidden;
-    margin:40px 0 64px;
-    background:var(--surface);
-    white-space:nowrap;
-  }
-
-  .ticker-track{
-    display:inline-flex;
-    animation:scroll 28s linear infinite;
-    padding:12px 0;
-  }
-
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;margin:40px 0 64px;background:var(--surface);white-space:nowrap;}
+  .ticker-track{display:inline-flex;animation:scroll 28s linear infinite;padding:12px 0;}
   .ticker-track span{
-    font-family:var(--font-mono);
-    font-size:12px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--text-dim);
-    padding:0 20px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
+    font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--text-dim);padding:0 20px;display:inline-flex;align-items:center;gap:8px;
   }
-
-  .ticker-track span.up{color:var(--accent);}
-  .ticker-track .dot{color:var(--text-faint);}
-
-  @keyframes scroll{
-    from{transform:translateX(0);}
-    to{transform:translateX(-50%);}
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .ticker-track{animation:none;}
-  }
+  .ticker-track span.up{color:var(--accent);} .ticker-track .dot{color:var(--text-faint);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){.ticker-track{animation:none;}}
 
   /* ---------- SECTION SHARED ---------- */
   section{padding:0 0 72px;}
-
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:12px;
-    margin-bottom:28px;
-  }
-
-  .section-head .idx{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--accent);
-  }
-
-  .section-head h2{
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:22px;
-    letter-spacing:-0.005em;
-  }
-
-  .section-sub{
-    color:var(--text-dim);
-    font-size:14px;
-    margin:-16px 0 28px;
-  }
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:28px;}
+  .section-head .idx{font-family:var(--font-mono);font-size:12px;color:var(--accent);}
+  .section-head h2{font-family:var(--font-display);font-weight:600;font-size:22px;letter-spacing:-0.005em;}
+  .section-sub{color:var(--text-dim);font-size:14px;margin:-16px 0 28px;}
 
   /* ---------- SOCIAL GRID ---------- */
-  .social-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:12px;
-  }
-
+  .social-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:12px;}
   .social-card{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:18px;
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    transition:border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+    display:flex;align-items:center;gap:14px;padding:18px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);transition:border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
   }
-
-  .social-card:hover{
-    border-color:var(--icon-color, var(--accent));
-    transform:translateY(-2px);
-    background:var(--surface-raised);
-  }
-
-  .social-icon{
-    width:38px;
-    height:38px;
-    border-radius:9px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
-    background:var(--icon-color);
-  }
-
-  .social-icon svg{width:19px; height:19px; fill:#0B0E14;}
-
-  .social-copy .label{
-    font-weight:600;
-    font-size:14px;
-  }
-
-  .social-copy .handle{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--text-dim);
-  }
+  .social-card:hover{border-color:var(--icon-color, var(--accent));transform:translateY(-2px);background:var(--surface-raised);}
+  .social-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--icon-color);}
+  .social-icon svg{width:19px;height:19px;fill:#0B0E14;}
+  .social-copy .label{font-weight:600;font-size:14px;} .social-copy .handle{font-family:var(--font-mono);font-size:12px;color:var(--text-dim);}
 
   /* ---------- BROKER CARDS ---------- */
-  .broker-card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:28px;
-    margin-bottom:20px;
-  }
-
-  .broker-top{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-bottom:20px;
-  }
-
-  .broker-name{
-    font-family:var(--font-display);
-    font-size:19px;
-    font-weight:600;
-    margin-bottom:4px;
-  }
-
-  .broker-desc{
-    color:var(--text-dim);
-    font-size:14px;
-    max-width:360px;
-  }
-
+  .broker-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin-bottom:20px;}
+  .broker-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px;}
+  .broker-name{font-family:var(--font-display);font-size:19px;font-weight:600;margin-bottom:4px;}
+  .broker-desc{color:var(--text-dim);font-size:14px;max-width:360px;}
   .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:var(--accent);
-    color:#0B0E14;
-    font-weight:600;
-    font-size:14px;
-    padding:11px 20px;
-    border-radius:7px;
-    border:none;
-    cursor:pointer;
-    white-space:nowrap;
-    transition:background 0.15s ease, transform 0.15s ease;
+    display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0B0E14;font-weight:600;font-size:14px;
+    padding:11px 20px;border-radius:7px;border:none;cursor:pointer;white-space:nowrap;transition:background 0.15s ease, transform 0.15s ease;
   }
-
-  .btn:hover{background:#E4C580; transform:translateY(-1px);}
-
-  .btn-arrow{font-family:var(--font-mono);}
-
-  .steps{
-    border-top:1px solid var(--line);
-    padding-top:20px;
-  }
-
-  .steps-label{
-    font-family:var(--font-mono);
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--text-faint);
-    margin-bottom:14px;
-  }
-
-  .steps ol{
-    list-style:none;
-    counter-reset:step;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-bottom:16px;
-  }
-
-  .steps li{
-    counter-increment:step;
-    display:flex;
-    gap:12px;
-    font-size:14px;
-    color:var(--text);
-  }
-
-  .steps li::before{
-    content:counter(step);
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--accent);
-    background:var(--surface-raised);
-    border:1px solid var(--line);
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
-    margin-top:1px;
-  }
-
-  .code-chip{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:var(--bg);
-    border:1px solid var(--line);
-    border-radius:6px;
-    padding:10px 14px;
-    font-family:var(--font-mono);
-    font-size:13px;
-  }
-
-  .code-chip .code-label{
-    color:var(--text-faint);
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-  }
-
-  .code-chip .code-value{
-    color:var(--accent);
-    font-weight:600;
-  }
-
-  .copy-btn{
-    background:none;
-    border:1px solid var(--line);
-    color:var(--text-dim);
-    font-family:var(--font-mono);
-    font-size:11px;
-    padding:4px 9px;
-    border-radius:5px;
-    cursor:pointer;
-    margin-left:auto;
-    transition:border-color 0.15s ease, color 0.15s ease;
-  }
-
-  .copy-btn:hover{border-color:var(--accent); color:var(--accent);}
+  .btn:hover{background:#E4C580;transform:translateY(-1px);} .btn-arrow{font-family:var(--font-mono);}
+  .steps{border-top:1px solid var(--line);padding-top:20px;}
+  .steps-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:14px;}
+  .steps ol{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
+  .steps li{counter-increment:step;display:flex;gap:12px;font-size:14px;color:var(--text);}
+  .steps li::before{content:counter(step);font-family:var(--font-mono);font-size:11px;color:var(--accent);background:var(--surface-raised);border:1px solid var(--line);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .code-chip{display:inline-flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 14px;font-family:var(--font-mono);font-size:13px;}
+  .code-chip .code-label{color:var(--text-faint);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;}
+  .code-chip .code-value{color:var(--accent);font-weight:600;}
+  .copy-btn{background:none;border:1px solid var(--line);color:var(--text-dim);font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:5px;cursor:pointer;margin-left:auto;transition:border-color 0.15s ease, color 0.15s ease;}
+  .copy-btn:hover{border-color:var(--accent);color:var(--accent);}
 
   /* ---------- SUPPORT ---------- */
-  .support-intro{
-    color:var(--text-dim);
-    font-size:14px;
-    margin:-16px 0 28px;
-    max-width:460px;
-  }
-
-  form{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:28px;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-  }
-
-  .field-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-
-  label{
-    display:block;
-    font-size:12px;
-    color:var(--text-dim);
-    margin-bottom:7px;
-  }
-
-  input, textarea{
-    width:100%;
-    background:var(--bg);
-    border:1px solid var(--line);
-    border-radius:7px;
-    padding:11px 13px;
-    color:var(--text);
-    font-family:var(--font-body);
-    font-size:14px;
-    transition:border-color 0.15s ease;
-  }
-
-  input:focus, textarea:focus{
-    outline:none;
-    border-color:var(--accent);
-  }
-
-  textarea{resize:vertical; min-height:110px;}
-
-  .form-status{
-    font-size:13px;
-    color:var(--accent);
-    display:none;
-  }
-
-  .fallback{
-    font-size:13px;
-    color:var(--text-dim);
-    margin-top:16px;
-  }
-
-  .fallback strong{
-    color:var(--accent);
-    font-family:var(--font-mono);
-    font-weight:500;
-  }
+  .support-intro{color:var(--text-dim);font-size:14px;margin:-16px 0 28px;max-width:460px;}
+  form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  label{display:block;font-size:12px;color:var(--text-dim);margin-bottom:7px;}
+  input, textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:11px 13px;color:var(--text);font-family:var(--font-body);font-size:14px;transition:border-color 0.15s ease;}
+  input:focus, textarea:focus{outline:none;border-color:var(--accent);} textarea{resize:vertical;min-height:110px;}
+  .form-status{font-size:13px;color:var(--accent);display:none;}
+  .fallback{font-size:13px;color:var(--text-dim);margin-top:16px;}
+  .fallback strong{color:var(--accent);font-family:var(--font-mono);font-weight:500;}
 
   /* ---------- FOOTER ---------- */
-  footer{
-    border-top:1px solid var(--line);
-    padding:28px 0 48px;
-    text-align:center;
-  }
-
-  .footer-socials{
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    margin-bottom:16px;
-    flex-wrap:wrap;
-  }
-
-  .footer-socials a{
-    width:38px;
-    height:38px;
-    border-radius:9px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--icon-color, var(--surface));
-    border:1px solid var(--line);
-    transition:transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  .footer-socials a svg{width:18px; height:18px; fill:#0B0E14;}
-
-  .footer-socials a:hover{
-    transform:translateY(-2px);
-    box-shadow:0 0 0 1px var(--icon-color), 0 6px 18px -6px rgba(0,0,0,0.5);
-  }
-
-  .copyright{
-    font-size:12px;
-    color:var(--text-faint);
-  }
-
-  .disclaimer{
-    font-size:11px;
-    color:var(--text-faint);
-    max-width:460px;
-    margin:12px auto 0;
-    line-height:1.6;
-  }
+  footer{border-top:1px solid var(--line);padding:28px 0 48px;text-align:center;}
+  .footer-socials{display:flex;justify-content:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;}
+  .footer-socials a{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:var(--icon-color, var(--surface));border:1px solid var(--line);transition:transform 0.15s ease, box-shadow 0.15s ease;}
+  .footer-socials a svg{width:18px;height:18px;fill:#0B0E14;}
+  .footer-socials a:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--icon-color), 0 6px 18px -6px rgba(0,0,0,0.5);}
+  .copyright{font-size:12px;color:var(--text-faint);}
+  .disclaimer{font-size:11px;color:var(--text-faint);max-width:460px;margin:12px auto 0;line-height:1.6;}
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:560px){
     .social-grid{grid-template-columns:1fr;}
     .field-row{grid-template-columns:1fr;}
-    .broker-top{flex-direction:column; align-items:flex-start;}
+    .broker-top{flex-direction:column;align-items:flex-start;}
     .broker-card{padding:22px;}
     .hero{padding:64px 0 32px;}
     .login-card{padding:28px 20px 24px;}
@@ -562,7 +219,173 @@
 </div>
 
 <div class="wrap">
-
-  <!-- HERO -->
   <div class="hero">
-    <img class="avatar" src="data:image/png;base64,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... (truncated)
+    <img class="avatar" src="data:image/png;base64,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..."></a>
+    <div class="eyebrow">Links · Referrals · Support</div>
+    <h1>Candlehax</h1>
+    <p class="tagline">Trading insights, live community, and broker access — all in one place.</p>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="up">Instagram <span class="dot">·</span></span>
+      <span>Telegram <span class="dot">·</span></span>
+      <span>Discord <span class="dot">·</span></span>
+      <span>YouTube <span class="dot">·</span></span>
+      <span class="up">Vantage <span class="dot">·</span></span>
+      <span>Exness <span class="dot">·</span></span>
+      <span class="up">Instagram <span class="dot">·</span></span>
+      <span>Telegram <span class="dot">·</span></span>
+      <span>Discord <span class="dot">·</span></span>
+      <span>YouTube <span class="dot">·</span></span>
+      <span class="up">Vantage <span class="dot">·</span></span>
+      <span>Exness <span class="dot">·</span></span>
+    </div>
+  </div>
+
+  <section id="social">
+    <div class="section-head">
+      <span class="idx">01</span>
+      <h2>Connect with me</h2>
+    </div>
+    <div class="social-grid">
+      <a class="social-card" href="https://www.instagram.com/candlehax?igsh=MXFmbDF0NmlqcjZhNQ==" target="_blank" rel="noopener" style="--icon-color:#E1306C;">
+        <span class="social-icon" style="--icon-color:#E1306C;">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.63.07-4.85.07s-3.6-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.63-.07-4.81s.01-3.56.07-4.81c.15-3.23 1.67-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zm0 3.15a6.65 6.65 0 100 13.3 6.65 6.65 0 000-13.3zm0 10.97a4.32 4.32 0 110-8.64 4.32 4.32 0 010 8.64zm6.9-11.23a1.55 1.55 0 11-3.1 0 1.55 1.55 0 013.1 0z"/></svg>
+        </span>
+        <span class="social-copy"><span class="label">Instagram</span><br><span class="handle">Follow for updates</span></span>
+      </a>
+
+      <a class="social-card" href="https://t.me/candlehax" target="_blank" rel="noopener" style="--icon-color:#2AABEE;">
+        <span class="social-icon" style="--icon-color:#2AABEE;">
+          <svg viewBox="0 0 24 24"><path d="M21.6 4.3 2.9 11.6c-1.27.5-1.26 1.2-.23 1.52l4.8 1.5 1.86 5.66c.22.6.38.85.78.85.35 0 .5-.16.7-.35l1.87-1.8 3.9 2.87c.72.4 1.24.19 1.42-.66l2.57-12.1c.27-1.06-.4-1.53-1.07-1.29z"/></svg>
+        </span>
+        <span class="social-copy"><span class="label">Telegram</span><br><span class="handle">Join the channel</span></span>
+      </a>
+
+      <a class="social-card" href="#" target="_blank" rel="noopener" style="--icon-color:#5865F2;">
+        <span class="social-icon" style="--icon-color:#5865F2;">
+          <svg viewBox="0 0 24 24"><path d="M20.3 5.4A18 18 0 0015.6 4l-.26.48a13.6 13.6 0 014.2 1.6 16.9 16.9 0 00-15 0 12.6 12.6 0 014.2-1.6L8.5 4a17.9 17.9 0 00-4.7 1.4S.6 10.2 0 19.2a18 18 0 005.6 2.8s.7-.85 1.27-1.6a8.5 8.5 0 01-2-1s.4.3 1 .5c0 0 1.8 1 4.6 1s4.6-1 4.6-1c.6-.2 1-.5 1-.5a8.3 8.3 0 01-2 1c.57.75 1.27 1.6 1.27 1.6A18 18 0 0024 19.2c-.6-9-3.7-13.8-3.7-13.8zM8.5 16.3c-1 0-1.9-1-1.9-2.2s.85-2.2 1.9-2.2 1.9 1 1.9 2.2-.85 2.2-1.9 2.2zm7 0c-1 0-1.9-1-1.9-2.2s.85-2.2 1.9-2.2 1.9 1 1.9 2.2-.85 2.2-1.9 2.2z"/></svg>
+        </span>
+        <span class="social-copy"><span class="label">Discord</span><br><span class="handle">Join the community</span></span>
+      </a>
+
+      <a class="social-card" href="https://youtube.com/@candlehax?si=OnZdsB21bHyHXRPO" target="_blank" rel="noopener" style="--icon-color:#FF0000;">
+        <span class="social-icon" style="--icon-color:#FF0000;">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg>
+        </span>
+        <span class="social-copy"><span class="label">YouTube</span><br><span class="handle">Subscribe for videos</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="brokers">
+    <div class="section-head">
+      <span class="idx">02</span>
+      <h2>Trade with me</h2>
+    </div>
+    <p class="section-sub">Sign up through the links below, then set the partner code so we stay connected.</p>
+
+    <div class="broker-card">
+      <div class="broker-top">
+        <div>
+          <div class="broker-name">Vantage</div>
+          <div class="broker-desc">Open a live Account with Vantage using my referral link.</div>
+        </div>
+        <a class="btn" href="https://vigco.co/la-com-inv/candlehax4u" target="_blank" rel="noopener">Join Vantage <span class="btn-arrow">→</span></a>
+      </div>
+      <div class="steps">
+        <div class="steps-label">How to set your partner code</div>
+        <ol>
+          <li>Log in to your Vantage Client Portal.</li>
+          <li>Go to <strong>PROFILE</strong>.</li>
+          <li>Find the field labeled <strong>Partner Code</strong> (or <strong>IB Code</strong>).</li>
+          <li>Enter the code shown below, then click <strong>Submit</strong>.</li>
+        </ol>
+        <div class="code-chip">
+          <span class="code-label">Code</span>
+          <span class="code-value">Candlehax4u</span>
+          <button class="copy-btn" type="button" onclick="copyToClipboard('Candlehax4u')">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="broker-card">
+      <div class="broker-top">
+        <div>
+          <div class="broker-name">Exness</div>
+          <div class="broker-desc">Open a live Account with Exness using my referral link.</div>
+        </div>
+        <a class="btn" href="https://one.exnessonelink.com/a/zu4b8j75ah" target="_blank" rel="noopener">Join Exness <span class="btn-arrow">→</span></a>
+      </div>
+      <div class="steps">
+        <div class="steps-label">How to set your partner code</div>
+        <ol>
+          <li>Log in to your Exness Personal Area.</li>
+          <li>Go to <strong>Settings → Partner Account</strong>.</li>
+          <li>Locate the <strong>Partner ID</strong> (or <strong>Referral Code</strong>) field.</li>
+          <li>Enter the code shown below, then confirm.</li>
+        </ol>
+        <div class="code-chip">
+          <span class="code-label">Code</span>
+          <span class="code-value">zu4b8j75ah</span>
+          <button class="copy-btn" type="button" onclick="copyToClipboard('zu4b8j75ah')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="section-head">
+      <span class="idx">03</span>
+      <h2>Need help? Get in touch</h2>
+    </div>
+    <p class="support-intro">Questions about referral codes, socials, or anything else — send a message and I'll get back to you.</p>
+
+    <form action="https://formsubmit.co/bhattilavish1@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New message from Candlehax site">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" id="nextField" value="https://lavish-bhatti.github.io/candlehax/thank-you.html">
+
+      <div class="field-row">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div>
+        <label for="subject">Subject (optional)</label>
+        <input type="text" id="subject" name="subject">
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button class="btn" type="submit" style="align-self:flex-start;">Send message</button>
+    </form>
+
+    <p class="fallback">Prefer email directly? Reach me at <strong>lb7798822@gmail.com</strong>.</p>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/candlehax?igsh=MXFmbDF0NmlqcjZhNQ==" target="_blank" rel="noopener" aria-label="Instagram" style="--icon-color:#E1306C;"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.63.07-4.85.07s-3.6-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.63-.07-4.81s.01-3.56.07-4.81c.15-3.23 1.67-4.77 4.92-4.92C8.4 2.2 8.8 2.2 12 2.2zm0 3.15a6.65 6.65 0 100 13.3 6.65 6.65 0 000-13.3zm0 10.97a4.32 4.32 0 110-8.64 4.32 4.32 0 010 8.64zm6.9-11.23a1.55 1.55 0 11-3.1 0 1.55 1.55 0 013.1 0z"/></svg></a>
+    <a href="https://t.me/candlehax" target="_blank" rel="noopener" aria-label="Telegram" style="--icon-color:#2AABEE;"><svg viewBox="0 0 24 24"><path d="M21.6 4.3 2.9 11.6c-1.27.5-1.26 1.2-.23 1.52l4.8 1.5 1.86 5.66c.22.6.38.85.78.85.35 0 .5-.16.7-.35l1.87-1.8 3.9 2.87c.72.4 1.24.19 1.42-.66l2.57-12.1c.27-1.06-.4-1.53-1.07-1.29z"/></svg></a>
+    <a href="#" target="_blank" rel="noopener" aria-label="Discord" style="--icon-color:#5865F2;"><svg viewBox="0 0 24 24"><path d="M20.3 5.4A18 18 0 0015.6 4l-.26.48a13.6 13.6 0 014.2 1.6 16.9 16.9 0 00-15 0 12.6 12.6 0 014.2-1.6L8.5 4a17.9 17.9 0 00-4.7 1.4S.6 10.2 0 19.2a18 18 0 005.6 2.8s.7-.85 1.27-1.6a8.5 8.5 0 01-2-1s.4.3 1 .5c0 0 1.8 1 4.6 1s4.6-1 4.6-1c.6-.2 1-.5 1-.5a8.3 8.3 0 01-2 1c.57.75 1.27 1.6 1.27 1.6A18 18 0 0024 19.2c-.6-9-3.7-13.8-3.7-13.8zM8.5 16.3c-1 0-1.9-1-1.9-2.2s.85-2.2 1.9-2.2 1.9 1 1.9 2.2-.85 2.2-1.9 2.2zm7 0c-1 0-1.9-1-1.9-2.2s.85-2.2 1.9-2.2 1.9 1 1.9 2.2-.85 2.2-1.9 2.2z"/></svg></a>
+    <a href="https://youtube.com/@candlehax?si=OnZdsB21bHyHXRPO" target="_blank" rel="noopener" aria-label="YouTube" style="--icon-color:#FF0000;"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg></a>
+  </div>
+  <div class="copyright">© 2026 Candlehax. All rights reserved.</div>
+  <p class="disclaimer">Trading involves risk and may not be suitable for everyone. Please review each broker's terms before signing up.</p>
+</footer>
+
+<script>function copyToClipboard(text){navigator.clipboard.writeText(text);}</script>
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
