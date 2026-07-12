@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candlehax Admin</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>CANDLEHAX</h2>
+    <a href="#">🏠 Dashboard</a>
+    <a href="#">👥 Members</a>
+    <a href="#">🟢 Online Users</a>
+    <a href="#">📊 Analytics</a>
+    <a href="#">🚫 Banned Users</a>
+    <a href="#" id="logoutBtn">Logout</a>
+</div>
+
+<div class="content">
+    <h1>Admin Dashboard</h1>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Users</h3>
+            <h2 id="totalUsers">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Online Users</h3>
+            <h2 id="onlineUsers">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Today's Logins</h3>
+            <h2 id="todayLogins">0</h2>
+        </div>
+    </div>
+
+    <input id="search" placeholder="Search user by name or email">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Last Login</th>
+                <th>Status</th>
+                <th>Ban</th>
+            </tr>
+        </thead>
+        <tbody id="usersTable">
+        </tbody>
+    </table>
+
+</div>
+
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
 
