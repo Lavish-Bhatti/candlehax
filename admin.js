@@ -8,7 +8,10 @@ import {
   unbanUser,
 } from "./firestore.js";
 
-const ADMIN_EMAIL = "lavishbhatti@gmail.com";
+const ADMIN_EMAILS = [
+    "bhattilavish1@gmail.com",
+    "an4085612@gmail.com"
+];
 
 const totalUsersEl = document.getElementById("totalUsers");
 const onlineUsersEl = document.getElementById("onlineUsers");
