@@ -257,3 +257,48 @@ export function dashboardStats(users){
     };
 
 }
+
+// ==========================================
+// Get All Users
+// ==========================================
+
+export async function getAllUsers() {
+
+    const snapshot = await getDocs(collection(db, "users"));
+
+    let users = [];
+
+    snapshot.forEach((doc) => {
+
+        users.push({
+
+            id: doc.id,
+
+            ...doc.data()
+
+        });
+
+    });
+
+    return users;
+
+}
+// ==========================================
+// Update Online Status
+// ==========================================
+
+export async function updateOnlineStatus(uid, status) {
+
+    await updateDoc(
+
+        doc(db, "users", uid),
+
+        {
+
+            online: status
+
+        }
+
+    );
+
+}
