@@ -214,7 +214,7 @@ function startDashboard() {
 }
 
 function boot() {
-  requireAdmin(ADMIN_EMAIL);
+  requireAdmin();
   bindEvents();
   startDashboard();
 }
